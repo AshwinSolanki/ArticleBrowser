@@ -8,8 +8,10 @@ on:
 
 jobs:
   build:
-    name: Build Debug APK
     runs-on: ubuntu-latest
+
+    env:
+      JAVA_TOOL_OPTIONS: "-Djava.io.tmpdir=/tmp"
 
     steps:
       - name: Checkout code
@@ -31,11 +33,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Make Gradle executable
-        run: chmod +x gradlew
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew clean assembleDebug --no-daemon --stacktrace
         env:
           JAVA_TOOL_OPTIONS: "-Djava.io.tmpdir=/tmp"
 
