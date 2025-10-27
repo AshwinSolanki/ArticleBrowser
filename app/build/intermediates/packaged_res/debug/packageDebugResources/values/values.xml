@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_background">#FFFFFF</color>
+    <string name="app_name">Article Browser</string>
+    <style name="Theme.ArticleBrowser" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryVariant">#1565C0</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+    </style>
+</resources>

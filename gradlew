@@ -1,10 +1,3 @@
-#!/usr/bin/env sh
-#
-# Gradle startup script for POSIX systems
-#
-
-APP_HOME=$( cd "${0%/*}" && pwd -P )
-DEFAULT_JVM_OPTS=""
-JAVA_CMD="java"
-
-exec "$JAVA_CMD" $DEFAULT_JVM_OPTS -jar "$APP_HOME/gradle/wrapper/gradle-wrapper.jar" "$@"
+#!/bin/sh
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+java -Xmx64m -Xms64m -classpath "$DIR/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain "$@"
